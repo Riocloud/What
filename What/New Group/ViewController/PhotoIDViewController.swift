@@ -9,10 +9,17 @@
 import Foundation
 import UIKit
 let Google = GoogleVisionAPIManager()
-class PhotoIDViewController: UIViewController,UITableViewDelegate {
+
+protocol passValueDelegate {
+    func passValue(text: String)
+}
+
+class PhotoIDViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+    
     var GoogleVisions = [GoogleVision]()
     var newImage = UIImage()
-   
+    var delegate: passValueDelegate?
+
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var GoogleResult: UITableView!
@@ -29,8 +36,9 @@ class PhotoIDViewController: UIViewController,UITableViewDelegate {
     }
     
     
-    private func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         dataProcess(image: theImagePassed)
+        print(dataProcess(image: theImagePassed))
         let cell = tableView.dequeueReusableCell(withIdentifier: "GoogleCell", for: indexPath) as UITableViewCell
         
         // Configure the cell...
@@ -61,7 +69,9 @@ class PhotoIDViewController: UIViewController,UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         GoogleResult.delegate = self
-        GoogleResult.dataSource = self as? UITableViewDataSource
+        GoogleResult.dataSource = self
+        GoogleResult.register(UITableViewCell.self, forCellReuseIdentifier: "GoogleCell")
+        self.view.addSubview(GoogleResult)
         Google.delegate = self as? GoogleVisionAPIDelegate
         if imageView != nil {
             imageView.image = newImage

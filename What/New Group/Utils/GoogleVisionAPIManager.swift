@@ -138,6 +138,8 @@ class GoogleVisionAPIManager {
             for LabelAnnotation in LabelAnnotations{
                 
                 let des = GoogleVision(description : LabelAnnotation.description)
+                print(LabelAnnotations)
+                print(LabelAnnotations.description)
                 GoogleVisions.append(des)
                 
             }
