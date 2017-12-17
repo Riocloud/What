@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 import SafariServices
 
+
 class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelegate {
     var ImageShare = UIImage()
     let wiki = WikiAPIManger()
     var des: String = ""
     
-    
-    
+   
     func showPages(_ url: URL) {
         let config = SFSafariViewController.Configuration()
         config.entersReaderIfAvailable = true

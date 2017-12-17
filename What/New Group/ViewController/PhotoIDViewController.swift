@@ -54,6 +54,7 @@ class PhotoIDViewController: UIViewController,UITableViewDelegate {
             let dvc = segue.destination as! PhotoDetailsViewController
             dvc.ImageShare = newImage
             //如何传送文字过去？
+           // dvc.NameLabel = ???
         }
     }
     
