@@ -43,6 +43,8 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate,UIN
       //  imageView.image = image
      //   Google.GoogleVisionUsingCodable(with: image)
         //图片控制器退出
+        performSegue(withIdentifier: "showPic", sender: nil)
+
         picker.dismiss(animated: true, completion: {
             () -> Void in
         })
@@ -62,7 +64,7 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate,UIN
         } else {
             noCamera()
         }
-       
+        
         
     }
     
@@ -83,23 +85,32 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate,UIN
         }else{
             print("读取相册错误")
         }
+        
+        
     }
+ 
+//   func prepareForSegueCamera(segue: UIStoryboardSegue, sender: Any?) {
+//     if segue.identifier == "toBrowseCamera" {
+//     let dvc = segue.destination as! PhotoIDViewController
+//     dvc.newImage = theImagePassed
+//     }
     
-   func prepareForSegueCamera(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if segue.identifier == "toBrowseCamera" {
-            let dvc = segue.destination as! PhotoIDViewController
-            dvc.newImage = theImagePassed
-        }
-    }
- func prepareForSegueAlbum(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+//    }
+// func prepareForSegueAlbum(segue: UIStoryboardSegue, sender: Any?) {
+//     if segue.identifier == "toBrowseAlbum" {
+//     let dvc = segue.destination as! PhotoIDViewController
+//     dvc.newImage = theImagePassed
+ //    }
+    
+ //   }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toBrowseAlbum" {
+            print("here to prepare picture")
             let dvc = segue.destination as! PhotoIDViewController
             dvc.newImage = theImagePassed
         }
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view,

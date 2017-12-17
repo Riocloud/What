@@ -10,7 +10,6 @@
 		48676B6EE84F8491A3571B6B /* Pods_What.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3796B82661FF5AF845F272 /* Pods_What.framework */; };
 		BE27E9641FE5ED1D0031AB46 /* WikiAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE27E9631FE5ED1D0031AB46 /* WikiAPIManager.swift */; };
 		BE7667411FE63D8700D86B09 /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7667401FE63D8700D86B09 /* PhotoDetailsViewController.swift */; };
-		BE7667451FE6407B00D86B09 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7667441FE6407B00D86B09 /* SearchViewController.swift */; };
 		BE99753E1FE4BB5800AF8E2B /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99753D1FE4BB5800AF8E2B /* PhotoViewController.swift */; };
 		BE9975401FE5075100AF8E2B /* PhotoIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99753F1FE5075100AF8E2B /* PhotoIDViewController.swift */; };
 		BED58F6F1FE3A72F006A4E6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED58F6E1FE3A72F006A4E6D /* AppDelegate.swift */; };
@@ -48,7 +47,6 @@
 		682C7520877870BC98A9CD1C /* Pods-What.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What.release.xcconfig"; path = "Pods/Target Support Files/Pods-What/Pods-What.release.xcconfig"; sourceTree = "<group>"; };
 		BE27E9631FE5ED1D0031AB46 /* WikiAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiAPIManager.swift; sourceTree = "<group>"; };
 		BE7667401FE63D8700D86B09 /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
-		BE7667441FE6407B00D86B09 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BE99753D1FE4BB5800AF8E2B /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		BE99753F1FE5075100AF8E2B /* PhotoIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoIDViewController.swift; sourceTree = "<group>"; };
 		BED58F6B1FE3A72F006A4E6D /* What.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = What.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,7 +173,6 @@
 				BE99753D1FE4BB5800AF8E2B /* PhotoViewController.swift */,
 				BE99753F1FE5075100AF8E2B /* PhotoIDViewController.swift */,
 				BE7667401FE63D8700D86B09 /* PhotoDetailsViewController.swift */,
-				BE7667441FE6407B00D86B09 /* SearchViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -422,7 +419,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEE20D511FE4BA9B00CD8C80 /* Favourite.swift in Sources */,
-				BE7667451FE6407B00D86B09 /* SearchViewController.swift in Sources */,
 				BED58F9D1FE3A822006A4E6D /* MenuViewController.swift in Sources */,
 				BE27E9641FE5ED1D0031AB46 /* WikiAPIManager.swift in Sources */,
 				BED58F6F1FE3A72F006A4E6D /* AppDelegate.swift in Sources */,

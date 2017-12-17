@@ -28,7 +28,23 @@
 	<string>Use Camera</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Know your location</string>
-	<key>UIMainStoryboardFile</key>
+    <key>NSExtension</key>
+<dict>
+    <key>NSExtensionAttributes</key>
+    <dict>
+        <key>NSExtensionActivationRule</key>
+        <dict>
+            <key>NSExtensionActivationSupportsWebURLWithMaxCount</key>
+            <integer>1</integer>
+        </dict>
+        <key>NSExtensionJavaScriptPreprocessingFile</key>
+        <string>GetURL</string>
+    </dict>
+    <key>NSExtensionMainStoryboard</key>
+    <string>MainInterface</string>
+    <key>NSExtensionPointIdentifier</key>
+    <string>com.apple.share-services</string>
+</dict>	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
