@@ -12,7 +12,7 @@
 		BE867EE81FE670A400C0651C /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE867EE71FE670A400C0651C /* PhotoDetailsViewController.swift */; };
 		BE99753E1FE4BB5800AF8E2B /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99753D1FE4BB5800AF8E2B /* PhotoViewController.swift */; };
 		BE9975401FE5075100AF8E2B /* PhotoIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99753F1FE5075100AF8E2B /* PhotoIDViewController.swift */; };
-		BECD381E1FE6837900D229C8 /* SearchTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECD381D1FE6837900D229C8 /* SearchTimeViewController.swift */; };
+		BECD38201FE685B900D229C8 /* SearchTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECD381F1FE685B900D229C8 /* SearchTimeViewController.swift */; };
 		BED58F6F1FE3A72F006A4E6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED58F6E1FE3A72F006A4E6D /* AppDelegate.swift */; };
 		BED58F741FE3A72F006A4E6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED58F721FE3A72F006A4E6D /* Main.storyboard */; };
 		BED58F761FE3A72F006A4E6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BED58F751FE3A72F006A4E6D /* Assets.xcassets */; };
@@ -50,7 +50,7 @@
 		BE867EE71FE670A400C0651C /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
 		BE99753D1FE4BB5800AF8E2B /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		BE99753F1FE5075100AF8E2B /* PhotoIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoIDViewController.swift; sourceTree = "<group>"; };
-		BECD381D1FE6837900D229C8 /* SearchTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTimeViewController.swift; sourceTree = "<group>"; };
+		BECD381F1FE685B900D229C8 /* SearchTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTimeViewController.swift; sourceTree = "<group>"; };
 		BED58F6B1FE3A72F006A4E6D /* What.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = What.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED58F6E1FE3A72F006A4E6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BED58F731FE3A72F006A4E6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 				BE99753D1FE4BB5800AF8E2B /* PhotoViewController.swift */,
 				BE99753F1FE5075100AF8E2B /* PhotoIDViewController.swift */,
 				BE867EE71FE670A400C0651C /* PhotoDetailsViewController.swift */,
-				BECD381D1FE6837900D229C8 /* SearchTimeViewController.swift */,
+				BECD381F1FE685B900D229C8 /* SearchTimeViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -433,7 +433,7 @@
 				BE9975401FE5075100AF8E2B /* PhotoIDViewController.swift in Sources */,
 				BE867EE81FE670A400C0651C /* PhotoDetailsViewController.swift in Sources */,
 				BE99753E1FE4BB5800AF8E2B /* PhotoViewController.swift in Sources */,
-				BECD381E1FE6837900D229C8 /* SearchTimeViewController.swift in Sources */,
+				BECD38201FE685B900D229C8 /* SearchTimeViewController.swift in Sources */,
 				BEE20D4D1FE4BA5800CD8C80 /* squareStruct.swift in Sources */,
 				BEE20D531FE4BAD700CD8C80 /* GoogleVisionAPIManager.swift in Sources */,
 			);

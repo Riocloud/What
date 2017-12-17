@@ -103,12 +103,15 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate,UIN
 //        }
 //    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showPic" {
+        if segue.identifier == "showPic" || segue.identifier == "showCamera"  {
             print("here to prepare picture")
             let dvc = segue.destination as! PhotoIDViewController
             dvc.newImage = theImagePassed
         }
+        
     }
+    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view,

@@ -48,6 +48,15 @@ class PhotoIDViewController: UIViewController,UITableViewDelegate {
         performSegue(withIdentifier: "Ta", sender: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Ta"  {
+            print("here to prepare picture")
+            let dvc = segue.destination as! PhotoDetailsViewController
+            dvc.ImageShare = newImage
+            //如何传送文字过去？
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         GoogleResult.delegate = self

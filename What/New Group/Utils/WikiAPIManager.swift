@@ -15,7 +15,7 @@ import SwiftyJSON
 
 internal class WikiAPIManger {
     
-    internal static func getExtract(title: String) -> Future<String?, NSError> {
+  func getExtract(title: String) -> Future<String?, NSError> {
         
         let promise = Promise<String?, NSError>()
         

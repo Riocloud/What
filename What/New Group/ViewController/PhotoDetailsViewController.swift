@@ -11,7 +11,7 @@ import UIKit
 import SafariServices
 
 class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelegate {
-    var newImage = UIImage()
+    var ImageShare = UIImage()
     let wiki = WikiAPIManger()
     var des: String = ""
     
@@ -27,8 +27,14 @@ class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelega
     }
     
     
+    @IBAction func FavouritePressed(_ sender: Any) {
+    }
     
     @IBOutlet weak var NameLabel: UILabel!
+    
+   
+    @IBOutlet weak var wikiText: UITextView!
+    
     //从 PhotoDetailsViewController 传值过来
     @IBAction func WikiPressed(_ sender: Any) {
            //   showPages(url)
@@ -36,10 +42,9 @@ class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelega
     }
     //从 PhotoDetailsViewController 传值过来
     @IBAction func SharePressed(_ sender: Any) {
-        if let image = UIImage(named: "myImage") {
-            let vc = UIActivityViewController(activityItems: [image], applicationActivities: [])
+            let vc = UIActivityViewController(activityItems: [ImageShare], applicationActivities: [])
             present(vc, animated: true)
-        }
+        
     }
     
     

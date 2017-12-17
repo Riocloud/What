@@ -106,6 +106,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPg-st-rdN">
                                 <rect key="frame" x="282" y="87" width="112" height="30"/>
                                 <state key="normal" title="Add to Favoutite"/>
+                                <connections>
+                                    <action selector="FavouritePressed:" destination="0fJ-iX-8sI" eventType="touchUpInside" id="2Jo-Vq-ZAV"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="egs-fY-Lk6">
                                 <rect key="frame" x="0.0" y="171" width="414" height="471"/>
@@ -163,6 +166,7 @@
                     </view>
                     <connections>
                         <outlet property="NameLabel" destination="dxx-Fd-Rxq" id="93G-S8-2Gv"/>
+                        <outlet property="wikiText" destination="egs-fY-Lk6" id="U8q-kR-WeB"/>
                         <segue destination="aMJ-Eu-6aX" kind="show" id="Jdy-eE-GhK"/>
                     </connections>
                 </viewController>
