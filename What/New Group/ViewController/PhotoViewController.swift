@@ -40,11 +40,11 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate,UIN
         //获取选择的原图
         image = info[UIImagePickerControllerOriginalImage] as! UIImage
         theImagePassed = image
-      //  imageView.image = image
-     //   Google.GoogleVisionUsingCodable(with: image)
+//        imageView.image = image
+        print("picked image", theImagePassed)
+        
         //图片控制器退出
         performSegue(withIdentifier: "showPic", sender: nil)
-
         picker.dismiss(animated: true, completion: {
             () -> Void in
         })
@@ -64,7 +64,7 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate,UIN
         } else {
             noCamera()
         }
-        
+       
         
     }
     
@@ -82,30 +82,28 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate,UIN
             self.present(picker, animated: true, completion: {
                 () -> Void in
             })
+            
         }else{
             print("读取相册错误")
         }
-        
-        
     }
- 
-//   func prepareForSegueCamera(segue: UIStoryboardSegue, sender: Any?) {
-//     if segue.identifier == "toBrowseCamera" {
-//     let dvc = segue.destination as! PhotoIDViewController
-//     dvc.newImage = theImagePassed
-//     }
     
+//   func prepareForSegueCamera(segue: UIStoryboardSegue, sender: AnyObject?) {
+//
+//        if segue.identifier == "showPic" {
+//            let dvc = segue.destination as! PhotoIDViewController
+//            dvc.newImage = theImagePassed
+//        }
 //    }
-// func prepareForSegueAlbum(segue: UIStoryboardSegue, sender: Any?) {
-//     if segue.identifier == "toBrowseAlbum" {
-//     let dvc = segue.destination as! PhotoIDViewController
-//     dvc.newImage = theImagePassed
- //    }
-    
- //   }
-
+// func prepareForSegueAlbum(segue: UIStoryboardSegue, sender: AnyObject?) {
+//
+//        if segue.identifier == "toBrowseAlbum" {
+//            let dvc = segue.destination as! PhotoIDViewController
+//            dvc.newImage = theImagePassed
+//        }
+//    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toBrowseAlbum" {
+        if segue.identifier == "showPic" {
             print("here to prepare picture")
             let dvc = segue.destination as! PhotoIDViewController
             dvc.newImage = theImagePassed
