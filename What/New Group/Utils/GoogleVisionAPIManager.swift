@@ -108,14 +108,14 @@ class GoogleVisionAPIManager {
             //check for valid response with 200 (success)
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                 self.delegate?.dataNotFound(reason: .networkRequestFailed)
-                
+                 print("3333")
                 return
             }
             
             //ensure data is non-nil
             guard let data = data else {
                 self.delegate?.dataNotFound(reason: .noData)
-                
+                 print("2222")
                 return
             }
             
@@ -127,7 +127,7 @@ class GoogleVisionAPIManager {
             //ensure json structure matches our expections and contains a venues array
             guard let root = decodedRoot else {
                 self.delegate?.dataNotFound(reason: .badJSONResponse)
-                
+                print("1111")
                 return
             }
             

@@ -32,6 +32,7 @@ class PhotoIDViewController: UIViewController,UITableViewDelegate, UITableViewDa
     
     
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(GoogleVisions.count)
         return GoogleVisions.count
     }
     

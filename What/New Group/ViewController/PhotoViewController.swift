@@ -42,7 +42,7 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate,UIN
         theImagePassed = image
 //        imageView.image = image
         print("picked image", theImagePassed)
-        
+        Google.GoogleVisionUsingCodable(with: theImagePassed)
         //图片控制器退出
         performSegue(withIdentifier: "showPic", sender: nil)
         picker.dismiss(animated: true, completion: {
