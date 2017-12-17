@@ -98,7 +98,7 @@
         <!--Photo Details View Controller-->
         <scene sceneID="gyO-fG-eje">
             <objects>
-                <viewController id="0fJ-iX-8sI" customClass="PhotoDetailsViewController" sceneMemberID="viewController">
+                <viewController id="0fJ-iX-8sI" customClass="PhotoDetailsViewController" customModule="What" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BHr-Fb-HmR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -163,11 +163,40 @@
                     </view>
                     <connections>
                         <outlet property="NameLabel" destination="dxx-Fd-Rxq" id="93G-S8-2Gv"/>
+                        <segue destination="aMJ-Eu-6aX" kind="show" id="Jdy-eE-GhK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1D9-vm-SLJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2708.6956521739135" y="-282.06521739130437"/>
+        </scene>
+        <!--Search Time View Controller-->
+        <scene sceneID="vpm-Jt-rLP">
+            <objects>
+                <tableViewController id="aMJ-Eu-6aX" customClass="SearchTimeViewController" customModule="What" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WmS-5n-rtE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="JH1-gd-K9q">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JH1-gd-K9q" id="0XA-CE-hGb">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="aMJ-Eu-6aX" id="p3N-c5-LRv"/>
+                            <outlet property="delegate" destination="aMJ-Eu-6aX" id="SAO-fw-1pA"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2JR-lz-Xxa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3429" y="-282"/>
         </scene>
         <!--Photo View Controller-->
         <scene sceneID="Heo-N0-dAw">
