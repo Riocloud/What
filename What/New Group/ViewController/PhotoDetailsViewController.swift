@@ -17,6 +17,23 @@ class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelega
     var desc: String = ""
     
    
+    func noValue(){
+        let alertVC = UIAlertController(
+            title: "No Value",
+            message: "Sorry, no value from previous",
+            preferredStyle: .alert)
+        let okAction = UIAlertAction(
+            title: "OK",
+            style:.default,
+            handler: nil)
+        alertVC.addAction(okAction)
+        present(
+            alertVC,
+            animated: true,
+            completion: nil)
+    }
+    
+    //Share function
     func showPages(_ url: URL) {
         let config = SFSafariViewController.Configuration()
         config.entersReaderIfAvailable = true
@@ -39,7 +56,15 @@ class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelega
     @IBAction func WikiPressed(_ sender: Any) {
            //   showPages(url)
     //  NameLabel =
-      //  wiki.getExtract(title: desc)
+       wiki.getExtract(title: desc)
+        .onSuccess{ extract in
+            if let extract = extract{
+                self.NameLabel.text = extract
+            }
+            else {
+                self.noValue()
+            }
+        }
     }
     //从 PhotoDetailsViewController 传值过来
     @IBAction func SharePressed(_ sender: Any) {
