@@ -8,16 +8,14 @@
 
 import Foundation
 import UIKit
-let Google = GoogleVisionAPIManager()
 class PhotoIDViewController: UIViewController {
-    
+    let google = GoogleVisionAPIManager()
+
    var newImage = UIImage()
    
-    
- 
     @IBOutlet weak var imageView: UIImageView!
     
-    //Google.GoogleVisionUsingCodable(with : theImagePassed)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
