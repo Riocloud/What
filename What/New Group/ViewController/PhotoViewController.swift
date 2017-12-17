@@ -8,8 +8,11 @@
 
 import Foundation
 import UIKit
-let imagePicker = UIImagePickerController()
+import SwiftyJSON
 
+let imagePicker = UIImagePickerController()
+var GoogleVisions = [GoogleVision]()
+var googleArray = [String]()
 var theImagePassed = UIImage()
 
 class PhotoViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
@@ -33,7 +36,10 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate,UIN
     
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : Any]) {
-        
+     
+        func dataProcess(image : UIImage){
+            Google.GoogleVisionUsingCodable(with: image)
+        }
         
         //显示的图片
         let image:UIImage!
@@ -42,7 +48,17 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate,UIN
         theImagePassed = image
 //        imageView.image = image
         print("picked image", theImagePassed)
-        Google.GoogleVisionUsingCodable(with: theImagePassed)
+        
+        
+       
+        //   print( Google.GoogleVisionUsingCodable(with: theImagePassed))
+     //   let number = GoogleVisions.count
+     //   print(number)
+     //   for i in 0...number {
+      //  let g = GoogleVisions[i]
+            
+       //     googleArray[i] = g.description
+      //  }
         //图片控制器退出
         performSegue(withIdentifier: "showPic", sender: nil)
         picker.dismiss(animated: true, completion: {
@@ -107,6 +123,7 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate,UIN
             print("here to prepare picture")
             let dvc = segue.destination as! PhotoIDViewController
             dvc.newImage = theImagePassed
+            dvc.resultAPI = googleArray
         }
         
     }

@@ -14,7 +14,7 @@ import SafariServices
 class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelegate {
     var ImageShare = UIImage()
     let wiki = WikiAPIManger()
-    var des: String = ""
+    var desc: String = ""
     
    
     func showPages(_ url: URL) {
@@ -38,7 +38,8 @@ class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelega
     //从 PhotoDetailsViewController 传值过来
     @IBAction func WikiPressed(_ sender: Any) {
            //   showPages(url)
-        
+    //  NameLabel =
+      //  wiki.getExtract(title: desc)
     }
     //从 PhotoDetailsViewController 传值过来
     @IBAction func SharePressed(_ sender: Any) {

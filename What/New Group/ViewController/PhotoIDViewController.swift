@@ -14,8 +14,9 @@ protocol passValueDelegate {
     func passValue(text: String)
 }
 
+
 class PhotoIDViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
-    
+    var resultAPI = [String] ()
     var GoogleVisions = [GoogleVision]()
     var newImage = UIImage()
     var delegate: passValueDelegate?
@@ -32,18 +33,20 @@ class PhotoIDViewController: UIViewController,UITableViewDelegate, UITableViewDa
     
     
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(GoogleVisions.count)
-        return GoogleVisions.count
+        print(resultAPI.count)
+        return resultAPI.count
     }
     
     
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        dataProcess(image: theImagePassed)
-        print(dataProcess(image: theImagePassed))
+        Google.GoogleVisionUsingCodable(with: theImagePassed)
+
+        // dataProcess(image: theImagePassed)
+       // print(dataProcess(image: theImagePassed))
         let cell = tableView.dequeueReusableCell(withIdentifier: "GoogleCell", for: indexPath) as UITableViewCell
         
         // Configure the cell...
-        let g = GoogleVisions[indexPath.row]
+        let g = resultAPI[indexPath.row]
         
         cell.textLabel?.text = g.description
         

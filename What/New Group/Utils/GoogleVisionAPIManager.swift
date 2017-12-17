@@ -141,7 +141,6 @@ class GoogleVisionAPIManager {
                 print(LabelAnnotations)
                 print(LabelAnnotations.description)
                 GoogleVisions.append(des)
-                
             }
             
             self.delegate?.dataFound(GoogleVisions: GoogleVisions)
