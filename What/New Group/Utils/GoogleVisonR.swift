@@ -13,7 +13,7 @@ class GoogleVisionR: NSObject {
     let score: Float
     
     let scoreKey = "score"
-    let titleKey = "title"
+    let titleKey = "descrip"
     
     init(descrip: String, score: Float) {
         
