@@ -45,6 +45,7 @@ class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelega
     
     
     @IBAction func FavouritePressed(_ sender: Any) {
+        
     }
     
     @IBOutlet weak var NameLabel: UILabel!

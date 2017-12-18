@@ -37,8 +37,8 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate,UIN
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : Any]) {
      
-        func dataProcess(image : UIImage) -> GoogleVision{
-           return Google.GoogleVisionUsingCodable(with: image)
+        func dataProcess(image : UIImage) {
+           Google.GoogleVisionUsingCodable(with: image)
         }
         
         //显示的图片
@@ -49,7 +49,7 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate,UIN
 //        imageView.image = image
         print("picked image", theImagePassed)
         
-        GoogleVisions = [dataProcess(image: theImagePassed)]
+        dataProcess(image: <#T##UIImage#>)
        
        print( Google.GoogleVisionUsingCodable(with: theImagePassed))
      //   let number = GoogleVisions.count
@@ -58,6 +58,7 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate,UIN
       //  let g = GoogleVisions[i]
        //     googleArray[i] = g.description
       //  }
+        sleep(4)
         //图片控制器退出
         performSegue(withIdentifier: "showPic", sender: nil)
         picker.dismiss(animated: true, completion: {

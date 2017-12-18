@@ -73,7 +73,7 @@ class GoogleVisionAPIManager {
     }
     var delegate: GoogleVisionAPIDelegate?
     
-    func GoogleVisionUsingCodable(with image: UIImage){
+    func GoogleVisionUsingCodable(with image: UIImage ,completion: @escaping ([String]) -> ()){
         let googleAPIKey = "AIzaSyBOW3eZXq1cYCADkOYq2RQzJ_KkFL0JxbY"
         let urlComponents = URLComponents(string:"https://vision.googleapis.com/v1/images:annotate?key=\(googleAPIKey)")!
         let url = urlComponents.url!
@@ -102,20 +102,65 @@ class GoogleVisionAPIManager {
         catch{
             print(error.localizedDescription)
         }
+
+        let task: URLSessionDataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "")
+                return
+            }
+            //print(NSString(data:data,encoding: String.Encoding.utf8.rawValue) ?? "nothing" )
+            
+            if let googleJsonDic = try? JSONSerialization.jsonObject(with: data, options: []){
+                
+                if let JsonDic = googleJsonDic as? [String:Any] { //json data is an array of dictionaries
+                    
+                    if let responses = JsonDic["responses"] as? [[String:Any]]{
+                        
+                        for labelAnnotations in responses {
+                            if let googleResultObjects  = labelAnnotations["labelAnnotations"] as? [[String:Any]] {
+                                for object in googleResultObjects {
+                                    let score = object["score"] as? Float ?? 0.0
+                                    let title = object["description"] as? String ?? "descrip"
+                                    let googleResult = GoogleVisionR(descrip : descrip, score : score)
+                                    // let googleResults = [googleResult]()
+                                    googleResults.append(googleResult)
+                                }
+                                self.delegate?.dataFound(GoogleVisions: googleResults)
+                            }
+                        }
+                    }else{
+                        self.delegate?.dataNotFound(reason: .networkRequestFailed)
+                    }
+                }else{
+                    self.delegate?.dataNotFound(reason: .noData)
+                }
+            }else{
+                self.delegate?.dataNotFound(reason: .badJSONResponse)
+            }
+            
+        }
+        task.resume()
+    }
+    
+}
+
+
+
+/*
         let task = URLSession.shared.dataTask(with: request) {(data ,response, error) in
             
             
             //check for valid response with 200 (success)
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                 self.delegate?.dataNotFound(reason: .networkRequestFailed)
-                 print("3333")
+                print("3333")
                 return
             }
             
             //ensure data is non-nil
             guard let data = data else {
                 self.delegate?.dataNotFound(reason: .noData)
-                 print("2222")
+                print("2222")
                 return
             }
             
@@ -135,15 +180,21 @@ class GoogleVisionAPIManager {
             let  LabelAnnotations = root.responses.description
             
             var GoogleVisions = [GoogleVision]()
+            var gvResult = [String]()
             for LabelAnnotation in LabelAnnotations{
                 
+                //   let des = GoogleVision()
                 let des = GoogleVision(description : LabelAnnotation.description)
-                print(LabelAnnotations)
-                print(LabelAnnotations.description)
+                //                print(LabelAnnotations)
+                // print("labelannotation->",LabelAnnotations.description)
+                gvResult.append(LabelAnnotations.description)
                 GoogleVisions.append(des)
             }
-            
+            print ("")
+            print(gvResult)
+            print("")
             self.delegate?.dataFound(GoogleVisions: GoogleVisions)
+            completion(gvResult)
         }
         
         task.resume()
@@ -152,3 +203,4 @@ class GoogleVisionAPIManager {
     
 }
 
+*/
