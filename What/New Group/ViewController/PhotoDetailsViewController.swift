@@ -68,10 +68,6 @@ class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelega
     }
     
     
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         NameLabel.text = desc

@@ -15,6 +15,8 @@
 		BE867EE81FE670A400C0651C /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE867EE71FE670A400C0651C /* PhotoDetailsViewController.swift */; };
 		BE99753E1FE4BB5800AF8E2B /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99753D1FE4BB5800AF8E2B /* PhotoViewController.swift */; };
 		BE9975401FE5075100AF8E2B /* PhotoIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99753F1FE5075100AF8E2B /* PhotoIDViewController.swift */; };
+		BE9C61851FE8462600B30883 /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9C61841FE8462600B30883 /* FavoriteTableViewController.swift */; };
+		BE9C61871FE846AB00B30883 /* FavouriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9C61861FE846AB00B30883 /* FavouriteCell.swift */; };
 		BECD38201FE685B900D229C8 /* SearchTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECD381F1FE685B900D229C8 /* SearchTimeViewController.swift */; };
 		BECD38221FE6EBEC00D229C8 /* imageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECD38211FE6EBEC00D229C8 /* imageCache.swift */; };
 		BED58F6F1FE3A72F006A4E6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED58F6E1FE3A72F006A4E6D /* AppDelegate.swift */; };
@@ -26,7 +28,6 @@
 		BED58F9D1FE3A822006A4E6D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED58F9C1FE3A822006A4E6D /* MenuViewController.swift */; };
 		BEE20D4D1FE4BA5800CD8C80 /* squareStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE20D4C1FE4BA5800CD8C80 /* squareStruct.swift */; };
 		BEE20D4F1FE4BA7E00CD8C80 /* GoogleVision.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE20D4E1FE4BA7E00CD8C80 /* GoogleVision.swift */; };
-		BEE20D511FE4BA9B00CD8C80 /* Favourite.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE20D501FE4BA9B00CD8C80 /* Favourite.swift */; };
 		BEE20D531FE4BAD700CD8C80 /* GoogleVisionAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE20D521FE4BAD700CD8C80 /* GoogleVisionAPIManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,8 @@
 		BE867EE71FE670A400C0651C /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
 		BE99753D1FE4BB5800AF8E2B /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		BE99753F1FE5075100AF8E2B /* PhotoIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoIDViewController.swift; sourceTree = "<group>"; };
+		BE9C61841FE8462600B30883 /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
+		BE9C61861FE846AB00B30883 /* FavouriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCell.swift; sourceTree = "<group>"; };
 		BECD381F1FE685B900D229C8 /* SearchTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTimeViewController.swift; sourceTree = "<group>"; };
 		BECD38211FE6EBEC00D229C8 /* imageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageCache.swift; sourceTree = "<group>"; };
 		BED58F6B1FE3A72F006A4E6D /* What.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = What.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,7 +77,6 @@
 		BED58F9C1FE3A822006A4E6D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		BEE20D4C1FE4BA5800CD8C80 /* squareStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = squareStruct.swift; sourceTree = "<group>"; };
 		BEE20D4E1FE4BA7E00CD8C80 /* GoogleVision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleVision.swift; sourceTree = "<group>"; };
-		BEE20D501FE4BA9B00CD8C80 /* Favourite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favourite.swift; sourceTree = "<group>"; };
 		BEE20D521FE4BAD700CD8C80 /* GoogleVisionAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleVisionAPIManager.swift; sourceTree = "<group>"; };
 		EEFD1203D74AA29835CF8ED2 /* Pods-What.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What.debug.xcconfig"; path = "Pods/Target Support Files/Pods-What/Pods-What.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,6 +187,8 @@
 				2E59BF751FE7495D002F592A /* GoogleTableViewCell.swift */,
 				BE867EE71FE670A400C0651C /* PhotoDetailsViewController.swift */,
 				BECD381F1FE685B900D229C8 /* SearchTimeViewController.swift */,
+				BE9C61841FE8462600B30883 /* FavoriteTableViewController.swift */,
+				BE9C61861FE846AB00B30883 /* FavouriteCell.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -223,7 +227,6 @@
 			isa = PBXGroup;
 			children = (
 				BEE20D4C1FE4BA5800CD8C80 /* squareStruct.swift */,
-				BEE20D501FE4BA9B00CD8C80 /* Favourite.swift */,
 			);
 			path = Codable;
 			sourceTree = "<group>";
@@ -438,11 +441,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E59BF761FE7495D002F592A /* GoogleTableViewCell.swift in Sources */,
-				BEE20D511FE4BA9B00CD8C80 /* Favourite.swift in Sources */,
 				BED58F9D1FE3A822006A4E6D /* MenuViewController.swift in Sources */,
 				BE27E9641FE5ED1D0031AB46 /* WikiAPIManager.swift in Sources */,
+				BE9C61871FE846AB00B30883 /* FavouriteCell.swift in Sources */,
 				BED58F6F1FE3A72F006A4E6D /* AppDelegate.swift in Sources */,
 				BEE20D4F1FE4BA7E00CD8C80 /* GoogleVision.swift in Sources */,
+				BE9C61851FE8462600B30883 /* FavoriteTableViewController.swift in Sources */,
 				BE1B68DE1FE83D5900628B50 /* PersistenceManager.swift in Sources */,
 				BE9975401FE5075100AF8E2B /* PhotoIDViewController.swift in Sources */,
 				BE867EE81FE670A400C0651C /* PhotoDetailsViewController.swift in Sources */,
