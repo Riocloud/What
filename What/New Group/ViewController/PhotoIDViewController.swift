@@ -17,7 +17,7 @@ protocol passValueDelegate {
 
 class PhotoIDViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     var resultAPI = [String] ()
-    var GoogleVisions = [GoogleVision]()
+    var GoogleVisions = [String]()
     var newImage = UIImage()
     var delegate: passValueDelegate?
 
@@ -26,29 +26,25 @@ class PhotoIDViewController: UIViewController,UITableViewDelegate, UITableViewDa
     @IBOutlet weak var GoogleResult: UITableView!
     //Google.GoogleVisionUsingCodable(with : theImagePassed)
     
-    func dataProcess(image : UIImage){
-        Google.GoogleVisionUsingCodable(with: image)
-    }
+//    func dataProcess(image : UIImage){
+//        Google.GoogleVisionUsingCodable(with: image)
+//    }
     
     
     
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(resultAPI.count)
+        print("count row for tableview",resultAPI.count)
         return resultAPI.count
     }
     
-    
-    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        Google.GoogleVisionUsingCodable(with: theImagePassed)
-
-        // dataProcess(image: theImagePassed)
-       // print(dataProcess(image: theImagePassed))
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GoogleCell", for: indexPath) as UITableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GoogleCell", for: indexPath) as! GoogleTableViewCell
         
         // Configure the cell...
         let g = resultAPI[indexPath.row]
+        print("in tableview",indexPath.row, " ",g)
+        cell.cellLabel?.text = g
         
-        cell.textLabel?.text = g.description
         
         return cell
     }
@@ -72,13 +68,11 @@ class PhotoIDViewController: UIViewController,UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        GoogleResult.delegate = self
-        GoogleResult.dataSource = self
-        GoogleResult.register(UITableViewCell.self, forCellReuseIdentifier: "GoogleCell")
-        self.view.addSubview(GoogleResult)
-        Google.delegate = self as? GoogleVisionAPIDelegate
+        
         if imageView != nil {
             imageView.image = newImage
         }
+        Google.delegate = self as? GoogleVisionAPIDelegate
+        
     }
 }

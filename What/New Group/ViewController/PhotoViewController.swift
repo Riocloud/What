@@ -15,6 +15,8 @@ var GoogleVisions = [GoogleVision]()
 var googleArray = [String]()
 var theImagePassed = UIImage()
 
+
+
 class PhotoViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     // if no camera or the camera is not working
@@ -37,9 +39,9 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate,UIN
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : Any]) {
      
-        func dataProcess(image : UIImage){
-            Google.GoogleVisionUsingCodable(with: image)
-        }
+//        func dataProcess(image : UIImage){
+//            Google.GoogleVisionUsingCodable(with: image)
+//        }
         
         //显示的图片
         let image:UIImage!
@@ -49,21 +51,30 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate,UIN
 //        imageView.image = image
         print("picked image", theImagePassed)
         
-        
-       
-        //   print( Google.GoogleVisionUsingCodable(with: theImagePassed))
-     //   let number = GoogleVisions.count
-     //   print(number)
-     //   for i in 0...number {
-      //  let g = GoogleVisions[i]
-            
-       //     googleArray[i] = g.description
-      //  }
-        //图片控制器退出
-        performSegue(withIdentifier: "showPic", sender: nil)
-        picker.dismiss(animated: true, completion: {
-            () -> Void in
+        Google.GoogleVisionUsingCodable(with: theImagePassed, completion: {(result) in
+            DispatchQueue.main.async {
+//                print("in photo ",result)
+                googleArray = result
+                self.performSegue(withIdentifier: "showPic", sender: nil)
+                picker.dismiss(animated: true, completion: {
+                    () -> Void in
+                })
+            }
         })
+//        Google.GoogleVisionUsingCodable(with: theImagePassed, completion: {
+//            let number = GoogleVisions.count
+//            print("in pnoto number of result",number)
+//               for i in 0...number {
+//              let g = GoogleVisions[i]
+//            
+//                 googleArray[i] = g.description
+//              }
+//        })
+        
+        
+     
+        //图片控制器退出
+        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -133,6 +144,9 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate,UIN
         super.viewDidLoad()
         // Do any additional setup after loading the view,
         imagePicker.delegate = self
+        
+        
+        Google.delegate = self as? GoogleVisionAPIDelegate
         
         
     }
