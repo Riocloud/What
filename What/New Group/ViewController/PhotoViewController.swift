@@ -12,7 +12,7 @@ import SwiftyJSON
 
 let imagePicker = UIImagePickerController()
 var GoogleVisions = [GoogleVision]()
-var googleArray = [String]()
+var googleArray = [GoogleVisionR]()
 var theImagePassed = UIImage()
 
 

@@ -16,7 +16,7 @@ protocol passValueDelegate {
 
 
 class PhotoIDViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
-    var resultAPI = [String] ()
+    var resultAPI = [GoogleVisionR] ()
     var GoogleVisions = [String]()
     var newImage = UIImage()
     var delegate: passValueDelegate?
@@ -51,13 +51,14 @@ class PhotoIDViewController: UIViewController,UITableViewDelegate, UITableViewDa
         
         // Configure the cell...
         let g = resultAPI[indexPath.row]
-        print("in tableview",indexPath.row, " ",g)
-        let dict = convertToDictionary(text: g)
+        print("in tableview",indexPath.row, " ",g.score)
+        
       //  let valueGoogle = Array(dict!).map{$0 == "description"}
-        print(dict)
-        print("111")
-        let valueGoogle = dict!["description"] as? String
-        cell.cellLabel?.text = valueGoogle
+//        print(dict)
+//        print("111")
+//        let valueGoogle = String(g.score)
+        cell.cellLabel?.text = g.descrip
+        cell.score?.text = String(g.score)
         
         
         return cell

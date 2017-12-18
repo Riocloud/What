@@ -10,6 +10,7 @@ import UIKit
 
 class GoogleTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var score: UILabel!
     @IBOutlet weak var cellLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

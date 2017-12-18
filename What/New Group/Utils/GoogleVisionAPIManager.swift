@@ -73,7 +73,7 @@ class GoogleVisionAPIManager {
     }
     var delegate: GoogleVisionAPIDelegate?
     
-    func GoogleVisionUsingCodable(with image: UIImage ,completion: @escaping ([String]) -> ()){
+    func GoogleVisionUsingCodable(with image: UIImage ,completion: @escaping ([GoogleVisionR]) -> ()){
         let googleAPIKey = "AIzaSyBOW3eZXq1cYCADkOYq2RQzJ_KkFL0JxbY"
         let urlComponents = URLComponents(string:"https://vision.googleapis.com/v1/images:annotate?key=\(googleAPIKey)")!
         let url = urlComponents.url!
@@ -126,10 +126,12 @@ class GoogleVisionAPIManager {
                                 for object in googleResultObjects {
                                     let score = object["score"] as? Float ?? 0.0
                                     let title = object["description"] as? String ?? "descrip"
-                                    let googleResult = GoogleVisionR(descrip : descrip, score : score)
+//                                    let googleResult = GoogleVisionR(descrip : descrip, score : score)
+                                    let googleResult = GoogleVisionR(descrip : title, score : score)
                                    // let googleResults = [googleResult]()
                                     googleResults.append(googleResult)
                                 }
+                                completion(googleResults)
                                 self.delegate?.dataFound(GoogleVisions: googleResults)
                             }
                         }
