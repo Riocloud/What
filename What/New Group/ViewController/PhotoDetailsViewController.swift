@@ -14,8 +14,9 @@ import SafariServices
 class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelegate {
     var ImageShare = UIImage()
     let wiki = WikiAPIManger()
+    let pre = PersistenceManager()
     var desc = String()
-    
+    var uuid = String()
     
     
     func noValue(){
@@ -34,6 +35,7 @@ class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelega
             completion: nil)
     }
     
+    
     //Share function
     func showPages(_ url: URL) {
         let config = SFSafariViewController.Configuration()
@@ -46,6 +48,23 @@ class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelega
     
     
     @IBAction func FavouritePressed(_ sender: Any) {
+        uuid = pre.get_uuid()
+        let userDefault = UserDefaults.standard
+        userDefault.set(desc, forKey: "String")
+       // let stringValue = userDefault.string(forKey: "String")
+        let image2 = UIImage(cgImage: ImageShare.cgImage!, scale: ImageShare.scale,
+                             orientation: ImageShare.imageOrientation)
+        let imageData = NSKeyedArchiver.archivedData(withRootObject: image2)
+        // Store Data
+        userDefault.set(imageData, forKey: "imageData")
+        ///UIImage对象读取
+        //获取Data
+       // let objData = userDefault.data(forKey: "imageData")
+        //还原对象
+       // let myImage = NSKeyedUnarchiver.unarchiveObject(with: objData!) as? UIImage
+       // print(myImage)
+        
+        
         
     }
     

@@ -10,28 +10,23 @@ import Foundation
 
 import Foundation
 import CoreData
-enum Path: String {
-    case Public = "Public"
-    case Starred = "Starred"
-    case MyGists = "MyGists"
-}
 
-class PersistenceManager: NSObject {
-    class private func documentsDirectory() -> NSString {
-        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory,
-                                                        .userDomainMask, true)
-        let documentDirectory = paths[0] as NSString
-        return documentDirectory
+
+class PersistenceManager{
+    func get_uuid() -> String{
+        let userid = UserDefaults.standard.string(forKey: "hangge")
+        //判断UserDefaults中是否已经存在
+        if(userid != nil){
+            return userid!
+        }else{
+            //不存在则生成一个新的并保存
+            let uuid_ref = CFUUIDCreate(nil)
+            let uuid_string_ref = CFUUIDCreateString(nil , uuid_ref)
+            let uuid = uuid_string_ref as! String
+            UserDefaults.standard.set(uuid, forKey: "hangge")
+            return uuid
+        }
     }
     
-    class func saveArray<T: NSCoding>(arrayToSave: [T], path: Path) -> Bool {
-        let file = documentsDirectory().appendingPathComponent(path.rawValue)
-        return NSKeyedArchiver.archiveRootObject(arrayToSave, toFile: file)
-    }
-    
-    class func loadArray<T: NSCoding>(path: Path) -> [T]? {
-        let file = documentsDirectory().appendingPathComponent(path.rawValue)
-        let result = NSKeyedUnarchiver.unarchiveObject(withFile: file)
-        return result as? [T]
-    }
+   
 }
