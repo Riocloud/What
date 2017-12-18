@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 protocol GoogleVisionAPIDelegate {
-    func dataFound(GoogleVisions : [GoogleVision])
+    func dataFound(GoogleVisions : [GoogleVisionR])
     func dataNotFound(reason: GoogleVisionAPIManager.FailureReason)
 }
 enum FailureReason: String {
@@ -102,7 +102,12 @@ class GoogleVisionAPIManager {
         catch{
             print(error.localizedDescription)
         }
-
+        
+        
+        var descrip = String()
+        var score = Float()
+        var googleResults = [GoogleVisionR]()
+        
         let task: URLSessionDataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "")
@@ -122,7 +127,7 @@ class GoogleVisionAPIManager {
                                     let score = object["score"] as? Float ?? 0.0
                                     let title = object["description"] as? String ?? "descrip"
                                     let googleResult = GoogleVisionR(descrip : descrip, score : score)
-                                    // let googleResults = [googleResult]()
+                                   // let googleResults = [googleResult]()
                                     googleResults.append(googleResult)
                                 }
                                 self.delegate?.dataFound(GoogleVisions: googleResults)
@@ -141,26 +146,34 @@ class GoogleVisionAPIManager {
         }
         task.resume()
     }
-    
+        
 }
-
-
-
-/*
+        
+        
+        
+        
+        /*
         let task = URLSession.shared.dataTask(with: request) {(data ,response, error) in
             
             
             //check for valid response with 200 (success)
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                 self.delegate?.dataNotFound(reason: .networkRequestFailed)
-                print("3333")
+                 print("3333")
                 return
             }
+            
+            
+            
+            
+            
+            
+            
             
             //ensure data is non-nil
             guard let data = data else {
                 self.delegate?.dataNotFound(reason: .noData)
-                print("2222")
+                 print("2222")
                 return
             }
             
@@ -169,7 +182,7 @@ class GoogleVisionAPIManager {
             
             
             
-            //ensure json structure matches our expections and contains a venues array
+            //ensure json structure matches our expections and contains a
             guard let root = decodedRoot else {
                 self.delegate?.dataNotFound(reason: .badJSONResponse)
                 print("1111")
@@ -177,22 +190,36 @@ class GoogleVisionAPIManager {
             }
             
             
-            let  LabelAnnotations = root.responses.description
             
+            
+            let  LabelAnnotations = root.responses.description
+//            var stringArr = [String]()
             var GoogleVisions = [GoogleVision]()
             var gvResult = [String]()
             for LabelAnnotation in LabelAnnotations{
                 
-                //   let des = GoogleVision()
                 let des = GoogleVision(description : LabelAnnotation.description)
-                //                print(LabelAnnotations)
-                // print("labelannotation->",LabelAnnotations.description)
+                print("labelannotation->",LabelAnnotations.description)
+                //let jsonData = LabelAnnotation.description
+                //let decoders = JSONDecoder()
+                //let beer = try?decoders.decode(Root.self, from: jsonData)
+                
                 gvResult.append(LabelAnnotations.description)
                 GoogleVisions.append(des)
+//                let splitedArray = gvResult[0].split{$0 == " "}
+//                let number = splitedArray.count
+//                var n = 0
+//                var stringInit = " "
+//                for num1 in 0..<number {
+//                    stringInit = String(splitedArray[num1])
+//                    if stringInit == "description:" {
+//                        stringArr[n] = String(splitedArray[num1 + 1])
+//                        n += 1
+//                    }
+//               }
+                
             }
-            print ("")
-            print(gvResult)
-            print("")
+            
             self.delegate?.dataFound(GoogleVisions: GoogleVisions)
             completion(gvResult)
         }
@@ -200,7 +227,6 @@ class GoogleVisionAPIManager {
         task.resume()
         
     }
-    
-}
+ }*/
 
-*/
+

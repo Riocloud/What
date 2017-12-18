@@ -1,5 +1,5 @@
 //
-//  GoogleVisionR.swift
+//  GoogleVisonR.swift
 //  What
 //
 //  Created by Will on 12/18/17.
@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 class GoogleVisionR: NSObject {
     let descrip: String
     let score: Float
@@ -32,3 +33,4 @@ extension GoogleVisionR: NSCoding {
         aCoder.encode(descrip, forKey: titleKey)
     }
 }
+

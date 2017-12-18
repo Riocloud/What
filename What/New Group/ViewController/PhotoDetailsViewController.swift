@@ -16,7 +16,7 @@ class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelega
     let wiki = WikiAPIManger()
     var desc: String = ""
     
-   
+    
     func noValue(){
         let alertVC = UIAlertController(
             title: "No Value",
@@ -50,27 +50,20 @@ class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelega
     
     @IBOutlet weak var NameLabel: UILabel!
     
-   
+    
     @IBOutlet weak var wikiText: UITextView!
+    
     
     //从 PhotoDetailsViewController 传值过来
     @IBAction func WikiPressed(_ sender: Any) {
-           //   showPages(url)
-    //  NameLabel =
-       wiki.getExtract(title: desc)
-        .onSuccess{ extract in
-            if let extract = extract{
-                self.NameLabel.text = extract
-            }
-            else {
-                self.noValue()
-            }
-        }
+        //   showPages(url)
+        //  NameLabel =
+       
     }
     //从 PhotoDetailsViewController 传值过来
     @IBAction func SharePressed(_ sender: Any) {
-            let vc = UIActivityViewController(activityItems: [ImageShare], applicationActivities: [])
-            present(vc, animated: true)
+        let vc = UIActivityViewController(activityItems: [ImageShare], applicationActivities: [])
+        present(vc, animated: true)
         
     }
     
@@ -81,6 +74,17 @@ class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NameLabel.text = desc
+        wiki.getExtract(title: desc)
+            .onSuccess{ extract in
+                if let extract = extract{
+                    self.wikiText.text = extract
+                }
+                else {
+                    self.noValue()
+                }
+        }
     }
     
 }
+
