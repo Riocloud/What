@@ -9,6 +9,7 @@
 import UIKit
 
 class FavoriteTableViewController: UITableViewController {
+    let userDefault = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,19 +35,28 @@ class FavoriteTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+      return 0
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FavouriteCell", for: indexPath) as! FavouriteCell
+         let fnumber = userDefault[indexPath.row]
+       
+        //还原对象
+        //label
+        let stringValue = userDefault.string(forKey: "String")
+        
+        //UIImage
+        let objData = userDefault.data(forKey: "imageData")
+        let myImage = NSKeyedUnarchiver.unarchiveObject(with: objData!) as? UIImage
+        
 
         // Configure the cell...
 
         return cell
     }
-    */
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
