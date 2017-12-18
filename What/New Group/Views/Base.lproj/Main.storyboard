@@ -94,10 +94,10 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="43" id="0fh-tR-6Nn" customClass="FavouriteCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavouriteCell" rowHeight="43" id="0fh-tR-6Nn" customClass="FavouriteCell" customModule="What" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="414" height="43"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0fh-tR-6Nn" id="gHN-FF-h4Q">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0fh-tR-6Nn" id="gHN-FF-h4Q" customClass="FavouriteCell" customModule="What" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="42.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
