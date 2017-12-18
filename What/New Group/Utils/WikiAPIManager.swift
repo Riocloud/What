@@ -19,8 +19,8 @@ internal class WikiAPIManger {
         
         let promise = Promise<String?, NSError>()
         
-        
-        if let URL = NSURL(string: "https://en.wikipedia.org/w/api.php") {
+       // print("断点1")
+        if let URL = URL(string: "https://en.wikipedia.org/w/api.php") {
             
             let params: [String: AnyObject] = [
                 "action": "query" as AnyObject,
@@ -34,8 +34,8 @@ internal class WikiAPIManger {
                 "titles": title as AnyObject
             ]
            
-          //  request(<#T##url: URLConvertible##URLConvertible#>)
-            request(URL as! URLConvertible, method: .get, parameters: params, encoding: JSONEncoding.default)
+          
+            request(URL, method: .get, parameters: params)
                 .responseJSON { response in
                     switch response.result {
                         

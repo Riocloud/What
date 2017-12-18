@@ -73,15 +73,17 @@ class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelega
         super.viewDidLoad()
         NameLabel.text = desc
         print(desc)
-     /*   wiki.getExtract(title: desc)
+       wiki.getExtract(title: desc)
             .onSuccess{ extract in
                 if let extract = extract{
+                    print("kksqsw")
+                    print(extract)
                     self.wikiText.text = extract
                 }
                 else {
                     self.noValue()
                 }
-        }*/
+        }
     }
     
 }

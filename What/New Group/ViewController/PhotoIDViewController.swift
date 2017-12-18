@@ -13,7 +13,7 @@ let Google = GoogleVisionAPIManager()
 protocol passValueDelegate {
     func passValue(text: String)
 }
-let valueOfGoogle = String()
+var valueOfGoogle = String()
 
 class PhotoIDViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     var resultAPI = [GoogleVisionR] ()
@@ -70,7 +70,7 @@ class PhotoIDViewController: UIViewController,UITableViewDelegate, UITableViewDa
         print("row: \(indexPath.row)")
         let currentCell = tableView.cellForRow(at: indexPath) as! GoogleTableViewCell
         print(currentCell.cellLabel.text)
-        let valueOfGoogle = String(describing: currentCell.cellLabel.text)
+        valueOfGoogle = resultAPI[indexPath.row].descrip
         
         
         performSegue(withIdentifier: "Ta", sender: nil)
@@ -83,8 +83,7 @@ class PhotoIDViewController: UIViewController,UITableViewDelegate, UITableViewDa
 
             let dvc = segue.destination as! PhotoDetailsViewController
             dvc.ImageShare = newImage
-            //如何传送文字过去？
-           // dvc.NameLabel = ???
+            
            dvc.desc = valueOfGoogle
             
         }
