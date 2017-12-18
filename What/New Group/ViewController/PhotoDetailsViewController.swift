@@ -51,18 +51,12 @@ class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelega
         uuid = pre.get_uuid()
         let userDefault = UserDefaults.standard
         userDefault.set(desc, forKey: "String")
-       // let stringValue = userDefault.string(forKey: "String")
+       
         let image2 = UIImage(cgImage: ImageShare.cgImage!, scale: ImageShare.scale,
                              orientation: ImageShare.imageOrientation)
         let imageData = NSKeyedArchiver.archivedData(withRootObject: image2)
         // Store Data
         userDefault.set(imageData, forKey: "imageData")
-        ///UIImage对象读取
-        //获取Data
-       // let objData = userDefault.data(forKey: "imageData")
-        //还原对象
-       // let myImage = NSKeyedUnarchiver.unarchiveObject(with: objData!) as? UIImage
-       // print(myImage)
         
         
         
