@@ -14,7 +14,8 @@ import SafariServices
 class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelegate {
     var ImageShare = UIImage()
     let wiki = WikiAPIManger()
-    var desc: String = ""
+    var desc = String()
+    
     
     
     func noValue(){
@@ -71,7 +72,8 @@ class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         NameLabel.text = desc
-        wiki.getExtract(title: desc)
+        print(desc)
+     /*   wiki.getExtract(title: desc)
             .onSuccess{ extract in
                 if let extract = extract{
                     self.wikiText.text = extract
@@ -79,7 +81,7 @@ class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelega
                 else {
                     self.noValue()
                 }
-        }
+        }*/
     }
     
 }

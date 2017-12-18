@@ -34,7 +34,7 @@ internal class WikiAPIManger {
                 "titles": title as AnyObject
             ]
            
-            
+          //  request(<#T##url: URLConvertible##URLConvertible#>)
             request(URL as! URLConvertible, method: .get, parameters: params, encoding: JSONEncoding.default)
                 .responseJSON { response in
                     switch response.result {
