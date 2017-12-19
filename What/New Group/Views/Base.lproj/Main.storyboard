@@ -178,6 +178,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvy-5k-LrP">
                                 <rect key="frame" x="183" y="699" width="48" height="30"/>
                                 <state key="normal" title="Twitter"/>
+                                <connections>
+                                    <action selector="Twitter:" destination="0fJ-iX-8sI" eventType="touchUpInside" id="RDh-Rq-Fmu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -203,7 +206,7 @@
                     <connections>
                         <outlet property="NameLabel" destination="dxx-Fd-Rxq" id="93G-S8-2Gv"/>
                         <outlet property="wikiText" destination="egs-fY-Lk6" id="U8q-kR-WeB"/>
-                        <segue destination="aMJ-Eu-6aX" kind="show" id="Jdy-eE-GhK"/>
+                        <segue destination="aMJ-Eu-6aX" kind="show" identifier="TT" id="Jdy-eE-GhK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1D9-vm-SLJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import TwitterKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,6 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        let s = "3e4NofvdwHqlaVufdg6UONPVW"
+        let sec = "MMQMUUnfoYhCH5TnX3r3PCaLxpxzQhTHfsyKzeuAUh6PA4yrja"
+        Twitter.sharedInstance().start(withConsumerKey: s, consumerSecret: sec)
         // Override point for customization after application launch.
         return true
     }

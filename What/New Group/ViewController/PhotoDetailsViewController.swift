@@ -64,13 +64,19 @@ class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelega
     
     @IBOutlet weak var NameLabel: UILabel!
     
+    @IBAction func Twitter(_ sender: Any) {
+        performSegue(withIdentifier: "TT", sender: nil)
+    }
+    
     
     @IBOutlet weak var wikiText: UITextView!
     
     
     //从 PhotoDetailsViewController 传值过来
     @IBAction func WikiPressed(_ sender: Any) {
-        //   showPages(url)
+        
+        let urllink = URL(string: "https://en.wikipedia.org/w/api.php")
+        showPages(urllink!)
         //  NameLabel =
        
     }
